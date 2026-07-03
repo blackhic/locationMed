@@ -1,0 +1,21 @@
+services:
+  autobahn:
+    build: .
+    container_name: autobahn
+    restart: always
+    env_file:
+      - .env                      # USERNAME / PASSWORD / FLASK_SECRET — NON commité
+    networks:
+      - root_default
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=root_default"
+      - "traefik.http.routers.autobahn.rule=Host(`autobahn.myzone-deals.com`)"
+      - "traefik.http.routers.autobahn.entrypoints=web,websecure"
+      - "traefik.http.routers.autobahn.tls=true"
+      - "traefik.http.routers.autobahn.tls.certresolver=mytlschallenge"
+      - "traefik.http.services.autobahn.loadbalancer.server.port=5000"
+
+networks:
+  root_default:
+    external: true
