@@ -15,11 +15,26 @@
     ]
   },
   "fields": {
-    "ville_date": {
-      "x": 990,
-      "y": 305,
-      "align": "left",
-      "label": "Meknes le (date)"
+    "ville_jour": {
+      "x": 952,
+      "y": 300,
+      "align": "center",
+      "cell": [924, 980],
+      "label": "Jour"
+    },
+    "ville_mois": {
+      "x": 1005,
+      "y": 300,
+      "align": "center",
+      "cell": [980, 1031],
+      "label": "Mois"
+    },
+    "ville_annee": {
+      "x": 1058,
+      "y": 300,
+      "align": "center",
+      "cell": [1031, 1090],
+      "label": "Annee"
     },
     "nom": {
       "x": 245,
@@ -150,10 +165,11 @@
       "label": "Heure retour"
     },
     "nbre_jours_veh": {
-      "x": 500,
-      "y": 925,
-      "align": "left",
-      "label": "Nbre de jours (zone vehicule)"
+      "x": 520,
+      "y": 930,
+      "align": "center",
+      "cell": [447, 596],
+      "label": "Nbre de jours (vehicule)"
     },
     "nb_jours": {
       "x": 136,

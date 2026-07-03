@@ -39,13 +39,13 @@ COLOR = RENDER["color_rgb"]                 # [0, 0, 0.55]
 
 # --- Organisation du formulaire ---
 SECTIONS = [
-    ("Identité", ["ville_date", "nom", "naissance", "nationalite", "adresse", "tel", "tel2"]),
+    ("Identité", ["nom", "naissance", "nationalite", "adresse", "tel", "tel2"]),
     ("Documents", ["passeport", "passeport_date", "cin", "cin_expire", "permis", "permis_date"]),
     ("Véhicule + Location", ["marque", "immat", "km_depart", "km_retour", "depart",
                              "heure_depart", "retour", "heure_retour", "nbre_jours_veh",
                              "nb_jours", "prix_jour", "montant"]),
 ]
-DATE_FIELDS = {"ville_date", "passeport_date", "cin_expire", "permis_date", "depart", "retour"}
+DATE_FIELDS = {"passeport_date", "cin_expire", "permis_date", "depart", "retour"}
 TIME_FIELDS = {"heure_depart", "heure_retour"}
 NUMBER_FIELDS = {"prix_jour", "km_depart", "km_retour"}
 PRICE_FIELDS = {"prix_jour", "montant"}                      # rendus "X,XX"
@@ -190,6 +190,11 @@ def contrat_page():
 @login_required
 def api_generate():
     values = request.get_json(silent=True) or request.form.to_dict()
+    # Date du jour "Meknès le JJ / MM / AAAA" — injectée côté serveur, hors formulaire
+    now = datetime.now()
+    values["ville_jour"] = now.strftime("%d")
+    values["ville_mois"] = now.strftime("%m")
+    values["ville_annee"] = now.strftime("%Y")
     missing = [k for k, m in FIELDS.items()
                if m.get("required") and not str(values.get(k, "")).strip()]
     if missing:
@@ -307,14 +312,6 @@ header a{color:#9db0c4;font-size:13px;text-decoration:none}
 </div>
 <script>
 const $=id=>document.getElementById(id);
-// Pré-remplir ville_date avec la date du jour (modifiable)
-(function(){
-  const v=$('ville_date');
-  if(v && !v.value){
-    const t=new Date();
-    v.value=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
-  }
-})();
 function days(){
   const d=$('depart').value, r=$('retour').value;
   if(!d||!r)return 0;
