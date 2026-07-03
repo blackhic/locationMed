@@ -1,0 +1,190 @@
+{
+  "_comment": "Coordonnees en pixels a 150 DPI. Image de reference: 1240x1755. Conversion en points PDF: x_pt = x_px * 72/150 ; y_pt = 842 - y_px * 72/150. Le texte est dessine avec drawString (baseline sur y).",
+  "render": {
+    "dpi_reference": 150,
+    "image_width_px": 1240,
+    "image_height_px": 1755,
+    "pdf_width_pt": 595,
+    "pdf_height_pt": 842,
+    "font": "Helvetica-Bold",
+    "font_size": 9,
+    "color_rgb": [
+      0,
+      0,
+      0.55
+    ]
+  },
+  "fields": {
+    "ville_date": {
+      "x": 990,
+      "y": 305,
+      "align": "left",
+      "label": "Meknes le (date)"
+    },
+    "nom": {
+      "x": 245,
+      "y": 407,
+      "align": "left",
+      "label": "Nom et prenom",
+      "required": true
+    },
+    "naissance": {
+      "x": 342,
+      "y": 443,
+      "align": "left",
+      "label": "Date et lieu de naissance",
+      "required": true
+    },
+    "nationalite": {
+      "x": 197,
+      "y": 479,
+      "align": "left",
+      "label": "Nationalite"
+    },
+    "adresse": {
+      "x": 177,
+      "y": 515,
+      "align": "left",
+      "label": "Adresse"
+    },
+    "passeport": {
+      "x": 190,
+      "y": 624,
+      "align": "left",
+      "label": "N Passeport"
+    },
+    "passeport_date": {
+      "x": 454,
+      "y": 624,
+      "align": "left",
+      "label": "Passeport delivre le"
+    },
+    "cin": {
+      "x": 153,
+      "y": 659,
+      "align": "left",
+      "label": "CIN N",
+      "required": true
+    },
+    "cin_expire": {
+      "x": 448,
+      "y": 659,
+      "align": "left",
+      "label": "CIN expire le",
+      "required": true
+    },
+    "permis": {
+      "x": 158,
+      "y": 696,
+      "align": "left",
+      "label": "Permis N",
+      "required": true
+    },
+    "permis_date": {
+      "x": 447,
+      "y": 696,
+      "align": "left",
+      "label": "Permis delivre le",
+      "required": true
+    },
+    "tel": {
+      "x": 181,
+      "y": 732,
+      "align": "left",
+      "label": "Tel GSM 1"
+    },
+    "tel2": {
+      "x": 181,
+      "y": 771,
+      "align": "left",
+      "label": "Tel GSM 2"
+    },
+    "marque": {
+      "x": 140,
+      "y": 855,
+      "align": "left",
+      "label": "Marque/Modele",
+      "required": true
+    },
+    "immat": {
+      "x": 185,
+      "y": 879,
+      "align": "left",
+      "label": "Immatriculation"
+    },
+    "km_depart": {
+      "x": 500,
+      "y": 855,
+      "align": "left",
+      "label": "km Depart"
+    },
+    "km_retour": {
+      "x": 500,
+      "y": 881,
+      "align": "left",
+      "label": "km Retour"
+    },
+    "depart": {
+      "x": 133,
+      "y": 925,
+      "align": "left",
+      "label": "Date depart",
+      "required": true
+    },
+    "heure_depart": {
+      "x": 287,
+      "y": 925,
+      "align": "left",
+      "label": "Heure depart"
+    },
+    "retour": {
+      "x": 133,
+      "y": 975,
+      "align": "left",
+      "label": "Date retour"
+    },
+    "heure_retour": {
+      "x": 287,
+      "y": 975,
+      "align": "left",
+      "label": "Heure retour"
+    },
+    "nbre_jours_veh": {
+      "x": 500,
+      "y": 925,
+      "align": "left",
+      "label": "Nbre de jours (zone vehicule)"
+    },
+    "nb_jours": {
+      "x": 136,
+      "y": 1335,
+      "align": "center",
+      "cell": [
+        53,
+        219
+      ],
+      "label": "Nos jours (ex: 10 (J))",
+      "required": true
+    },
+    "prix_jour": {
+      "x": 320,
+      "y": 1335,
+      "align": "center",
+      "cell": [
+        219,
+        421
+      ],
+      "label": "Prix/jour"
+    },
+    "montant": {
+      "x": 507,
+      "y": 1335,
+      "align": "center",
+      "cell": [
+        421,
+        594
+      ],
+      "label": "Montant total"
+    }
+  }
+}
